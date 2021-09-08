@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>C🍑RYDUMPS</title>
+    <meta name="description" content="We miss our friend. Have you seen him? Let us know! Paid for and approved by ASC / 2G.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#F19F4D">
+
+    {% set cacheId = 'version' | version %}
+    <link rel="stylesheet" type="text/css" href="/styles/dumps.css?v={{ cacheId }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+</head>
+<body class="dumps">
+    <main id="dumps-main">
+    {% block header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+    </main>
+</body>
+</html>
