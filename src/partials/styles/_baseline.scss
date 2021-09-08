@@ -1,0 +1,50 @@
+html {
+    font-family: Helvetica, Arial;
+
+    @include font-size(18);
+}
+
+.dumps {
+    background-color: $peach;
+    color: $black;
+    font-family: 'Abril Fatface', cursive;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    text-align: center;
+}
+
+.dumps-content {
+    margin: 0 auto;
+    max-width: 64rem;
+}
+
+a {
+    background-color: inherit;
+    color: $purple;
+    font-family: inherit;
+    text-decoration: underline;
+    transition: color var(--transition);
+
+    &:hover,
+    &:focus {
+        color: $black;
+    }
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.dumps-sr-only {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
