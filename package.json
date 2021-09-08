@@ -1,0 +1,47 @@
+{
+	"name": "corydumps",
+	"version": "0.0.0",
+	"private": "true",
+	"description": "Have you seen him?",
+	"scripts": {
+		"build": "npm run clean && npm run build:eleventy && npm run build:sass",
+		"build:eleventy": "npx @11ty/eleventy",
+		"build:sass": "node-sass src/partials/styles/styles.scss dist/styles/dumps-uncompressed.css && ./node_modules/.bin/postcss dist/styles/dumps-uncompressed.css > dist/styles/dumps.css",
+		"clean": "rimraf dist",
+		"serve": "npx @11ty/eleventy --serve --port=3110 --output=dist",
+		"start": "concurrently \"npm run build && npm run serve\" \"npm run watch\"",
+		"watch": "concurrently \"npm run watch:markup\" \"npm run watch:sass\"",
+		"watch:markup": "onchange 'src/**/*.njk' -- npm run build:eleventy",
+		"watch:sass": "onchange 'src/**/*.scss' -- concurrently \"npm run build:sass\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/aubskate/corydumps.git"
+	},
+	"engineStrict": true,
+	"engines": {
+		"node": ">= 16.0.0",
+		"npm": ">= 7.0.0"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "0.12.1",
+		"clean-css": "5.1.5",
+		"concurrently": "6.2.1",
+		"copyfiles": "2.4.1",
+		"cssnano": "5.0.8",
+		"fs-extra": "8.1.0",
+		"git-rev-sync": "3.0.1",
+		"markdown-it": "10.0.0",
+		"moment": "2.29.1",
+		"node-sass": "6.0.1",
+		"npm-run-all": "4.1.5",
+		"onchange": "7.1.0",
+		"postcss-cli": "8.3.1",
+		"rimraf": "2.7.1",
+		"terser": "5.7.2"
+	},
+	"dependencies": {
+		"nunjucks": "3.2.3",
+		"postcss": "8.3.6"
+	}
+}
