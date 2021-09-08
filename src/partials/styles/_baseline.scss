@@ -1,7 +1,6 @@
 html {
     font-family: Helvetica, Arial;
-
-    @include font-size(18);
+    font-size: 1rem;
 }
 
 .dumps {
